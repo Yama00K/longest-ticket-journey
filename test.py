@@ -3,6 +3,12 @@ import matplotlib.pyplot as plt
 from itertools import combinations
 import sys
 
+"""
+標準入力からグラフの情報(鉄道線路網の情報)を読み込み、最長経路を計算して出力するプログラム
+入力形式: 始点の ID(正の整数値), 終点の ID(正の整数値), 距離(浮動小数点数)¥r¥n
+出力形式: ノードID\r\n (最長経路上のノード(駅)を1行ずつ出力)
+"""
+
 def main():
     directed = True # 有向グラフの場合はTrue、無向グラフの場合はFalse
     plot = False    # グラフをプロットする場合はTrue、しない場合はFalse
@@ -14,7 +20,7 @@ def main():
         if not cleaned_line:
             continue
         parts = cleaned_line.split(',')
-        # print(parts)
+        # print(parts)  # デバック用：読み込んだ経路を表示
         input.append(parts)
 
     # 最長経路の計算
@@ -61,11 +67,11 @@ def calculate_longest_path(input: list, directed: bool, plot: bool):
 
     # 最長経路を出力
     if max_length > max_cycle_length:
-        print("最長経路長:{}".format(max_length))
+        # print("最長経路長:{}".format(max_length))   # デバック用：最長経路長を表示
         for node in best_path:
             print(node, end='\r\n')
     elif max_cycle_length > -1:
-        print("最長経路長:{}".format(max_cycle_length))
+        # print("最長経路長:{}".format(max_cycle_length))   # デバック用：最長経路長を表示
         for node in best_cycle:
             print(node, end='\r\n')
 

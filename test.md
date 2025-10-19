@@ -2,9 +2,17 @@
 ## テストコマンド
 以下のコマンドでテストファイルを入力して実行できます。
 ```bash
-python test.py < テスト用txtファイル
+python test.py < test_dataset/テスト用txtファイル
+```
+例
+```
+python test.py < test_dataset/test_simple.txt
 ```
 
+自身でテストファイルを準備する場合、以下のフォーマットでテストデータを作成すること。
+```
+始点の ID(正の整数値), 終点の ID(正の整数値), 距離(浮動小数点数)¥r¥n
+```
 
 -   ケース1：単純な一本道グラフ
 
