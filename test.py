@@ -5,7 +5,7 @@ import sys
 
 def main():
     directed = True # 有向グラフの場合はTrue、無向グラフの場合はFalse
-    plot = True     # グラフをプロットする場合はTrue、しない場合はFalse
+    plot = False    # グラフをプロットする場合はTrue、しない場合はFalse
     input = []      # 入力データを格納するリスト
 
     # 標準入力の読み込み
@@ -14,7 +14,7 @@ def main():
         if not cleaned_line:
             continue
         parts = cleaned_line.split(',')
-        print(parts)
+        # print(parts)
         input.append(parts)
 
     # 最長経路の計算
