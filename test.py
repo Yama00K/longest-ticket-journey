@@ -77,8 +77,9 @@ def calculate_longest_path(input: list, directed: bool, plot: bool):
 
     # グラフの可視化
     if plot:
-        pos = nx.spring_layout(G, seed=42)
-        nx.draw(G, pos, with_labels=True, node_color='skyblue', node_size=700, font_weight='bold')
+        # pos = nx.spring_layout(G, seed=42)
+        pos = nx.kamada_kawai_layout(G)
+        nx.draw(G, pos, with_labels=True, node_color='skyblue', node_size=400, font_weight='bold')
         weights = nx.get_edge_attributes(G, 'weight')
         nx.draw_networkx_edge_labels(G, pos, edge_labels=weights)
         plt.show()
